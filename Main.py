@@ -7,9 +7,9 @@ import keyboard
 import numpy as np
 import json
 
-input("Başlıyoruz (Enter'a basın.)")
+input("Start by pressing Enter.")
 
-print("Geri sayım bitti!")
+print("Countdown over.")
 os.system("cls")
 def show_banner():
     banner = r'''
@@ -35,7 +35,7 @@ for i in range(3, 0, -1):
     print(i)
     time.sleep(1)
 
-print("Geri sayım bitti!")
+print("Countdown over.")
 os.system("title ByLeaxi - Discord.gg/7WAe2ySZNN")
 
 def perform_actions():
@@ -63,7 +63,7 @@ def perform_actions():
         pyautogui.click(x, y)
         time.sleep(1)
 
-        time.sleep(3)
+        time.sleep(1)
         
         play_locations = list(pyautogui.locateAllOnScreen(play_image_path, confidence=0.8))
         if play_locations:
@@ -71,9 +71,9 @@ def perform_actions():
             px, py = pyautogui.center(random_location)
             pyautogui.click(px, py)
         else:
-            print("Play düğmesi bulunamadı.")
+            print("Play button not found.")
     else:
-        print("Oyun başlatma düğmesi bulunamadı.")
+        print("Start button not found.")
 
 
 
@@ -83,8 +83,8 @@ def perform_actions():
     fourth_location = pyautogui.locateOnScreen(fourth_image_path, confidence=0.8)
 
     if second_location:
-        print("(COIN CATCHER) Oynanıyor ")
-        time.sleep(1)
+        print("(COIN CATCHER) Playing... ")
+        time.sleep(10)
         start = pyautogui.locateOnScreen(start_image_path, confidence=0.8)
         if start:
             px, py = pyautogui.center(start)
@@ -122,10 +122,10 @@ def perform_actions():
             time.sleep(0.1)
 
     elif third_location:
-        print("(COIN PUZZLE) Bakım Aşamasında ")
+        print("(COIN PUZZLE) Error 404 in maintenance ")
         pass
     elif fourth_location:
-        print("(2048) Oynanıyor ")
+        print("(2048) Playing... ")
         start = pyautogui.locateOnScreen(start_image_path, confidence=0.8)
         if start:
             px, py = pyautogui.center(start)
@@ -150,7 +150,7 @@ def perform_actions():
             if res is not None:
                 break
     else:
-        print("Hiçbir Fotoğraf Bulunamadı.")
+        print("No Photos in phto.")
 
 while True:
     perform_actions()
